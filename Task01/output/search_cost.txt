@@ -1,0 +1,7 @@
+$ ./search_cost
+Flat directory entries        : 240000
+Average comparisons (flat)    : 120000
+Tree levels: home -> year(4) -> dept(10) -> regno(300) -> file(20)
+Average comparisons (tree)    : 167
+Speed-up                      : 719x
+With hashed/B-tree directories (ext4 htree): about log2(n) per level

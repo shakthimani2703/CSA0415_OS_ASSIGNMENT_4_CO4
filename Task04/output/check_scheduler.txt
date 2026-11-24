@@ -1,0 +1,5 @@
+$ ./check_scheduler.sh
+sda      scheduler: [none] mq-deadline kyber         HDD (rotational)
+sdb      scheduler: [none] mq-deadline kyber         HDD (rotational)
+sdc      scheduler: [none] mq-deadline kyber         HDD (rotational)
+sdd      scheduler: [none] mq-deadline kyber         HDD (rotational)

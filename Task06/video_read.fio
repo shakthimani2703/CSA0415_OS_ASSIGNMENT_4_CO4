@@ -1,0 +1,26 @@
+; Task 6 - fio job file to reproduce the "start playback" workload on real disks
+; Author: Shakthi M (192511197)
+; Run: fio Task06/video_read.fio   (set filename= to a test file or device)
+[global]
+ioengine=libaio
+direct=1
+filename=/tmp/fio_video_test
+size=4g
+runtime=30
+time_based
+group_reporting
+
+; Design A: small 4 KB random reads (fragmented, block-mapped files)
+[designA_4k_random]
+rw=randread
+bs=4k
+iodepth=32
+numjobs=4
+
+; Design B: 1 MB reads at random offsets (extent-based, large stripe unit)
+[designB_1m_random]
+stonewall
+rw=randread
+bs=1m
+iodepth=8
+numjobs=4

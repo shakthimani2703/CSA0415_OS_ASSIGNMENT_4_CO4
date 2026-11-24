@@ -1,0 +1,25 @@
+$ ./calc_cost
+=== Task 2.3: reaching the last block of a 4 GB file (4 KB blocks) ===
+Blocks in file                 : 1048576
+Contiguous                     : 1 disk read (address = start + 1048575)
+Linked (pointer in each block) : 1048576 disk reads
+FAT on disk (not cached)       : 1024 FAT-block reads + 1 data read = 1025
+FAT cached in memory           : 1048575 memory look-ups + 1 data read
+Indexed (inode)                : block 1048575 lies in the double indirect range
+                                 4 disk reads incl. inode (3 if inode cached)
+
+=== Inode maximum file size (12 direct, 1 single, 1 double, 1 triple) ===
+Pointers per block             : 1024
+Direct          :             12 blocks = 48 KB
+Single indirect :           1024 blocks = 4 MB
+Double indirect :        1048576 blocks = 4 GB
+Triple indirect :     1073741824 blocks = 4 TB
+Total           :     1074791436 blocks = 4402345721856 bytes (~4.0039 TB)
+
+=== Task 2.4: free-space management for a 4 TB disk ===
+Blocks on disk                 : 1073741824
+Bit vector size                : 1073741824 bits = 128 MB
+FAT size (4 B per entry)       : 4 GB
+Linked free list (empty disk)  : 0 extra blocks, 4 B pointer in each free block
+Grouping (1023 addr per block) : 1049602 blocks to list every free block
+Counting (empty disk)          : 1 entry (start 0, count 1073741824)

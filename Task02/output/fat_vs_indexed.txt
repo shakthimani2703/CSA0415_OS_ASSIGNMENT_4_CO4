@@ -1,0 +1,9 @@
+$ ./fat_vs_indexed
+k          FAT walk (us)    Index (us)       FAT lookups 
+10         1.81             0.511            10           same block
+1000       130.08           0.150            1000         same block
+100000     8219.12          1.072            100000       same block
+524288     39842.87         0.731            524288       same block
+1048575    71398.97         0.861            1048575      same block
+FAT memory for this 4 GB file : 4.0 MB
+FAT memory for a 4 TB disk     : 4.0 GB (2^30 entries x 4 B)

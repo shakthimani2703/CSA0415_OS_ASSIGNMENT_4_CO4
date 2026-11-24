@@ -1,0 +1,10 @@
+$ ./video_sim
+Catalogue: 3000 videos, 3.35 TB, average 1170 MB; 200000 play starts, batches of 32
+
+Design                             Avg(ms)   P95(ms)    HDDops     RAM%     SSD%   Starts/s
+A: HDD-only ext4 4KB, FCFS           608.1    2072.3      8.62     46.5      0.0       15.3
+A': HDD-only ext4 4KB, C-LOOK        576.4    1872.8      8.62     46.5      0.0       17.1
+B': SSD+HDD XFS extents, FCFS         28.9     187.9      0.24     46.6     32.3      153.4
+B: SSD+HDD XFS extents, C-LOOK        27.4     177.6      0.24     46.6     32.3      161.4
+
+Starts/s = play starts one HDD can sustain (1000 / HDD busy ms per start)

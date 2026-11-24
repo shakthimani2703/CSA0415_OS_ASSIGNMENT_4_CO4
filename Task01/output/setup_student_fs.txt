@@ -1,0 +1,41 @@
+$ ./setup_student_fs.sh
+(setfacl not installed: ACL step shown in report; install package 'acl')
+== Directory tree ==
+college_fs
+college_fs/home
+college_fs/home/2024
+college_fs/home/2024/cse
+college_fs/home/2024/ece
+college_fs/home/2025
+college_fs/home/2025/cse
+college_fs/home/2025/cse/192511150
+college_fs/home/2025/cse/192511150/private
+college_fs/home/2025/cse/192511150/private/notes.txt
+college_fs/home/2025/cse/192511150/projects
+college_fs/home/2025/cse/192511150/projects/cse-os-g07
+college_fs/home/2025/cse/192511150/public
+college_fs/home/2025/cse/192511150/public/resume.txt
+college_fs/home/2025/cse/192511197
+college_fs/home/2025/cse/192511197/private
+college_fs/home/2025/cse/192511197/private/notes.txt
+college_fs/home/2025/cse/192511197/projects
+college_fs/home/2025/cse/192511197/projects/cse-os-g07
+college_fs/home/2025/cse/192511197/public
+college_fs/home/2025/cse/192511197/public/resume.txt
+college_fs/home/2025/ece
+college_fs/projects
+college_fs/projects/cse-os-g07
+college_fs/projects/cse-os-g07/report.md
+college_fs/projects/ece-iot-g02
+college_fs/shared
+college_fs/shared/courses
+college_fs/shared/templates
+== Permissions ==
+drwxrwxrwx 1 shakthi27 shakthi27 4096 Nov 24 08:50 ./college_fs/home/2025/cse/192511197
+drwxrwxrwx 1 shakthi27 shakthi27 4096 Nov 24 08:50 ./college_fs/home/2025/cse/192511197/private
+drwxrwxrwx 1 shakthi27 shakthi27 4096 Nov 24 08:50 ./college_fs/home/2025/cse/192511197/public
+drwxrwxrwx 1 shakthi27 shakthi27 4096 Nov 24 08:50 ./college_fs/projects/cse-os-g07
+drwxrwxrwx 1 shakthi27 shakthi27 4096 Nov 24 08:50 ./college_fs/shared/templates
+== Link ==
+total 0
+lrwxrwxrwx 1 shakthi27 shakthi27 34 Nov 24 08:50 cse-os-g07 -> ../../../../../projects/cse-os-g07

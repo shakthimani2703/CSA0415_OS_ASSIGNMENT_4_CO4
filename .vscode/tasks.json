@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build active C file",
+      "type": "shell",
+      "command": "gcc",
+      "args": ["-std=c11", "-Wall", "-Wextra", "-O2", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}", "-lm"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build and run all tasks",
+      "type": "shell",
+      "command": "./run_all.sh",
+      "problemMatcher": []
+    }
+  ]
+}

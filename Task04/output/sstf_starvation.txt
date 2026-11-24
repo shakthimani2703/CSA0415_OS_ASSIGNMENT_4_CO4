@@ -1,0 +1,6 @@
+$ ./sstf_starvation
+Stream: 1 request per ms near cylinder 55-65 for 2000 ms; victim at 183 arrives at t=0
+Alg     Victim served at (ms) Requests served before
+FCFS                     15.0                      0
+SSTF                   4020.8                   2000
+LOOK                     23.0                      4

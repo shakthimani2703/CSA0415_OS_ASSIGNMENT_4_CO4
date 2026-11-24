@@ -1,0 +1,28 @@
+$ ./sched_sim
+
+Light  (1 req / 20 ms), 10000 requests, cylinders 0-199 (move in cylinders, times in ms)
+Alg         Avg move     Avg wait     Max wait      Std dev    Edge wait     Mid wait
+FCFS           67.45        13.09        78.11         9.17        15.44        11.72
+SSTF           64.02        11.60        54.20         7.11        14.01        10.29
+SCAN          106.93        21.80        63.84        11.83        24.03        20.30
+C-SCAN        136.45        33.01        90.65        17.52        34.50        32.08
+LOOK           64.21        11.68        47.34         7.15        13.97        10.37
+C-LOOK         66.24        12.48        61.67         8.37        14.78        11.17
+
+Medium (1 req / 10 ms), 10000 requests, cylinders 0-199 (move in cylinders, times in ms)
+Alg         Avg move     Avg wait     Max wait      Std dev    Edge wait     Mid wait
+FCFS           68.15        44.67       241.76        38.01        46.80        42.87
+SSTF           55.24        15.24        81.97         9.69        18.77        13.07
+SCAN           70.85        24.92        75.82        12.84        27.66        23.36
+C-SCAN         76.33        34.92        97.90        18.14        36.99        33.16
+LOOK           55.52        15.63        74.42         9.37        18.38        13.93
+C-LOOK         58.30        18.50        72.42        11.99        20.86        17.24
+
+Heavy  (1 req / 6 ms), 10000 requests, cylinders 0-199 (move in cylinders, times in ms)
+Alg         Avg move     Avg wait     Max wait      Std dev    Edge wait     Mid wait
+FCFS           66.48     13116.49     26703.88      7708.18     13038.10     13355.30
+SSTF           36.88        21.04       153.43        15.31        28.13        15.98
+SCAN           39.07        27.59        96.33        15.44        32.28        24.16
+C-SCAN         39.61        37.36       126.42        19.95        41.17        34.83
+LOOK           37.04        21.19        75.97        12.91        25.64        18.16
+C-LOOK         38.12        27.98        95.79        16.20        30.58        26.67

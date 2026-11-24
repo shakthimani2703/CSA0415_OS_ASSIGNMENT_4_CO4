@@ -1,0 +1,50 @@
+$ ./inspect_fs.sh
+### uname / distribution
+6.6.87.2-microsoft-standard-WSL2
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+
+### df -hT /
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/sdd       ext4 1007G  3.0G  953G   1% /
+
+### df -i /
+Filesystem       Inodes IUsed    IFree IUse% Mounted on
+/dev/sdd       67108864 70477 67038387    1% /
+
+### stat sample.txt
+  File: sample.txt
+  size: 10        	Blocks: 0          IO Block: 4096   regular file
+Device: 0,68	Inode: 1970324838330082  Links: 1
+Access: (0777/-rwxrwxrwx)  Uid: ( 1000/shakthi27)   Gid: ( 1000/shakthi27)
+Access: 2026-11-24 08:50:42.741247800 +0000
+Modify: 2026-11-24 08:50:42.741247800 +0000
+Change: 2026-11-24 08:50:42.741247800 +0000
+ Birth: -
+
+### ls -i
+3096224744855381 inspect_fs.sh
+1970324838330082 sample.txt
+
+### stat -f . (file-system view)
+  File: "."
+    ID: 100000000 Namelen: 255     Type: v9fs
+Block size: 4096       Fundamental block size: 4096
+Blocks: Total: 171074815  Free: 67541627   Available: 67541627
+Inodes: Total: 999        Free: 1000000
+
+### dumpe2fs -h ext4.img (selected lines)
+Filesystem volume name:   CSA0415
+Filesystem features:      has_journal ext_attr resize_inode dir_index orphan_file filetype extent 64bit flex_bg metadata_csum_seed sparse_super large_file huge_file dir_nlink extra_isize metadata_csum
+Default mount options:    user_xattr acl
+Inode count:              16384
+Block count:              16384
+Free blocks:              14287
+Free inodes:              16372
+Block size:               4096
+Inodes per group:         16384
+Inode size:               256
+
+### tune2fs -l ext4.img | grep -i journal
+Filesystem features:      has_journal ext_attr resize_inode dir_index orphan_file filetype extent 64bit flex_bg metadata_csum_seed sparse_super large_file huge_file dir_nlink extra_isize metadata_csum
+Journal inode:            8
+Journal backup:           inode blocks
